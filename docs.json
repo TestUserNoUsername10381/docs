@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Forge",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#F97316",
+    "light": "#FB923C",
+    "dark": "#C2410C"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -18,20 +18,54 @@
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Obfuscator",
+        "icon": "shield",
+        "pages": [
+          "obfuscator/overview.mdx",
+          "obfuscator/protection-options.mdx",
+          "obfuscator/presets.mdx",
+          "obfuscator/targets.mdx",
+          "obfuscator/output-length.mdx",
+          "obfuscator/vm-architecture.mdx",
+          "obfuscator/watermark.mdx"
+        ]
+      },
+      {
+        "group": "Hosting",
+        "icon": "server",
+        "pages": [
+          "hosting/overview.mdx",
+          "hosting/access-control.mdx"
+        ]
+      },
+      {
+        "group": "Account",
+        "icon": "user",
+        "pages": [
+          "account/plans.mdx",
+          "account/tickets.mdx",
+          "pricing.mdx"
+        ]
+      },
+      {
+        "group": "Reference",
+        "icon": "book",
+        "pages": [
+          "reference/cli.mdx",
+          "reference/api.mdx",
+          "faq.mdx"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -40,14 +74,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "/faq",
+        "label": "FAQ"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Pricing",
+      "href": "/pricing"
     }
   },
   "contextual": {
@@ -55,18 +89,12 @@
       "copy",
       "view",
       "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "claude"
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
     }
-  }
+  },
+  "description": "Advanced obfuscator"
 }

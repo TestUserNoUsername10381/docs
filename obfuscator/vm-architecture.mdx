@@ -1,0 +1,82 @@
+---
+title: "VM Architecture"
+description: "How the Forge custom virtual machine is built and randomized per build"
+sidebarTitle: "VM Architecture"
+icon: "cpu"
+---
+
+The Forge VM is the core of virtualized protection. Forge generates a fresh interpreter for every build, with randomized opcodes, dispatch, and handler ordering.
+
+## Runtime layout
+
+```text
+ForgeVM
+├─ Registers
+├─ Constant Pool
+├─ Call Stack
+├─ Closure Store
+├─ Prototype Store
+├─ Opcode Metadata
+├─ Dispatcher
+└─ Runtime Context
+```
+
+## Prototype format
+
+```text
+Prototype
+├─ Instruction Stream
+├─ Constants
+├─ Upvalues
+├─ Nested Prototypes
+└─ Metadata
+```
+
+## Instruction descriptor
+
+```text
+Instruction
+├─ Opcode
+├─ Operand A
+├─ Operand B
+├─ Operand C
+└─ Flags
+```
+
+## Execution pipeline
+
+## Opcode categories
+
+- Data movement
+- Constant loading
+- Arithmetic
+- Comparisons
+- Branching
+- Calls
+- Returns
+- Closure creation
+- Table operations
+- Upvalue operations
+
+## Instruction mutation
+
+Each opcode has multiple semantically equivalent handler implementations. The compiler picks one randomly per build, so:
+
+- Two builds of the same source produce different VMs
+- Static signature matching against the dispatcher fails
+- Handler fingerprints can't be reused across builds
+
+## Security layers
+
+| Layer | Role |
+| --- | --- |
+| 1 | Variable Renaming |
+| 2 | String Encryption |
+| 3 | Constant Virtualization |
+| 4 | Control Flow Flattening |
+| 5 | Instruction Mutation |
+| 6 | VM Compilation |
+| 7 | Payload Compression |
+| 8 | Payload Encryption |
+| 9 | Runtime Validation |
+| 10 | Build Diversity |

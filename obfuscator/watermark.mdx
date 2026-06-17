@@ -1,0 +1,29 @@
+---
+title: "Watermark"
+description: "How Forge marks free-tier output and how paid plans disable it"
+sidebarTitle: "Watermark"
+icon: "badge"
+---
+
+Forge appends a watermark comment to all free-tier protected output.
+
+## Free-tier watermark
+
+```text
+-- son this was obfs by Forge Obfuscator dang tuff | https://forge.example/
+```
+
+## Behavior
+
+- Added automatically on the **Free** plan
+- Disabled on **Starter**, **Pro**, **Titan**, and **Lifetime** plans
+- The watermark status is shown in the build summary before you click Protect
+- Removing the watermark from free-tier output is not supported
+
+## Why it exists
+
+The watermark lets free users showcase Forge while signaling that the build was made with the free tier. It does **not** alter your script's behavior or weaken protection.
+
+<Note>
+  Watermark text and link are configurable on enterprise plans.
+</Note>

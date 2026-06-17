@@ -1,0 +1,92 @@
+---
+title: "Protection Options"
+description: "Every protection module Forge ships, with toggles and recommendations"
+sidebarTitle: "Protection Options"
+icon: "shield-check"
+---
+
+Each protection feature can be toggled independently or applied through a [preset](/obfuscator/presets).
+
+## Core protections
+
+<CardGroup cols={2}>
+  <Card title="String Encryption" icon="lock">
+    Removes plaintext strings; decrypted lazily at runtime with cached results.
+  </Card>
+
+  <Card title="Constant Encryption" icon="hash">
+    Hides numbers, booleans, enums, and table keys behind a virtualized pool.
+  </Card>
+
+  <Card title="Control Flow Obfuscation" icon="git-branch">
+    Flattens structured branches into a randomized state machine.
+  </Card>
+
+  <Card title="Function Wrapping" icon="box">
+    Wraps every function body in protective trampolines.
+  </Card>
+
+  <Card title="Variable Renaming" icon="pen">
+    Renames locals to non-meaningful identifiers.
+  </Card>
+
+  <Card title="Identifier Minification" icon="minimize-2">
+    Compacts identifiers to reduce output size and signature surface.
+  </Card>
+</CardGroup>
+
+## Anti-analysis
+
+<CardGroup cols={2}>
+  <Card title="Dead Code Generation" icon="skull">
+    Inserts unreachable branches to confuse reverse engineers.
+  </Card>
+
+  <Card title="Junk Instruction Generation" icon="trash">
+    Adds VM-level no-op patterns to disrupt pattern matching.
+  </Card>
+
+  <Card title="Anti-Tamper" icon="shield-alert">
+    Self-hash verification, opcode table validation, runtime heartbeats.
+  </Card>
+
+  <Card title="Environment Validation" icon="radar">
+    Runtime checks that confirm the expected execution environment.
+  </Card>
+
+  <Card title="Integrity Verification" icon="fingerprint">
+    Detects payload mutation and aborts execution.
+  </Card>
+
+  <Card title="Watermarking" icon="badge-check">
+    Optional invisible build identifiers for licensing and tracing.
+  </Card>
+</CardGroup>
+
+## Cryptography
+
+<CardGroup cols={2}>
+  <Card title="Dynamic Key Generation" icon="key">
+    Per-build keys derived during compilation; never reused.
+  </Card>
+
+  <Card title="Runtime Decryption" icon="unlock">
+    Decryption happens just-in-time; nothing persists in memory longer than needed.
+  </Card>
+
+  <Card title="Bytecode Mutation" icon="shuffle">
+    Multiple semantically equivalent bytecode forms per source instruction.
+  </Card>
+
+  <Card title="Multi-Layer Encoding" icon="layers">
+    Stack base64 \+ custom alphabets \+ bit packing for the final payload.
+  </Card>
+</CardGroup>
+
+## Recommended combinations
+
+| Use case | Recommended toggles |
+| --- | --- |
+| Lightweight protection | String Encryption, Variable Renaming, Constant Encryption |
+| Anti-skid | All core \+ Control Flow \+ Dead Code |
+| Maximum security | All core \+ VM \+ Anti-Tamper \+ Bytecode Mutation |

@@ -1,0 +1,32 @@
+---
+title: "Hosted Scripts"
+description: "Host your protected Lua scripts on Forge and load them via a single URL"
+sidebarTitle: "Overview"
+icon: "server"
+---
+
+Forge can host your protected scripts and serve them through a unique URL. This replaces embedding entire payloads inside a `loadstring`.
+
+## Workflow
+
+<Steps>
+</Steps>
+
+## Example
+
+```lua
+loadstring(game:HttpGet("https://forge.example/s/abcd1234"))()
+```
+
+## Script management
+
+Each hosted script supports:
+
+- Rename
+- Edit and re-protect
+- Delete
+- Regenerate URL
+- View access statistics
+- View access history
+
+See [Access Control](/hosting/access-control) for password and IP allow-list options.

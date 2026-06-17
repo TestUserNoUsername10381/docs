@@ -1,0 +1,49 @@
+---
+title: "FAQ"
+description: "Frequently asked questions about Forge"
+sidebarTitle: "FAQ"
+icon: "circle-help"
+---
+
+## Is Forge unbreakable?
+
+No obfuscator is unbreakable. Forge is designed to make casual decompilation, signature matching, and pattern-based deobfuscation impractical — not impossible. With enough time and skill any virtualization can be reversed; Forge raises the cost dramatically.
+
+## What languages does Forge support?
+
+Lua and Luau only. Lua 5.1–5.4, LuaJIT, Luau (Roblox).
+
+## Will my script still run normally?
+
+Yes. Forge preserves runtime semantics. Expect a runtime overhead proportional to the protection strength you choose.
+
+## How much overhead does the VM add?
+
+Roughly 15–100% slower depending on preset (Balanced → VM Extreme). Tight inner loops are most affected.
+
+## Can I deobfuscate Forge output?
+
+Forge does not provide deobfuscation tooling for any obfuscator, including itself. Forge is a one-way protection tool.
+
+## Does Forge collect or transmit user data from my script?
+
+No. Forge does not inject telemetry, trackers, or analytics into protected scripts. Your script's behavior is preserved exactly.
+
+## Can I use Forge in CI?
+
+Yes — use the [CLI](/reference/cli) or the [HTTP API](/reference/api) with an API key.
+
+## What's the difference between presets and Output Length?
+
+- **Presets** control which protection modules run.
+- **Output Length** controls how much padding, junk, and structural complexity is added.
+
+They are independent.
+
+## How do tickets work?
+
+Each build consumes tickets based on protection strength. See [Tickets](/account/tickets).
+
+## What happens if my build runs out of tickets mid-month?
+
+New builds are blocked until your next reset. Existing protected scripts continue to work normally.

@@ -1,0 +1,54 @@
+---
+title: "Access Control"
+description: "Password protection, IP allow-lists, and expiration for hosted scripts"
+sidebarTitle: "Access Control"
+icon: "lock"
+---
+
+Forge gives every hosted script granular access controls.
+
+## Visibility modes
+
+<CardGroup cols={3}>
+  <Card title="Public" icon="globe">
+    Anyone with the URL can load the script.
+  </Card>
+
+  <Card title="Password" icon="key">
+    Requires a password before the payload is delivered.
+  </Card>
+
+  <Card title="Private" icon="lock">
+    Only the script owner can load it (signed-in dashboard usage).
+  </Card>
+</CardGroup>
+
+## Password protection
+
+- Set a password from the script settings
+- Unauthorized requests receive an Access Denied response
+- Passwords can be rotated at any time without changing the URL
+
+## IP restriction
+
+- Add allowed IPs or CIDR ranges to the script
+- Requests from unauthorized IPs are rejected
+- Manage allowed IPs from the script dashboard
+
+## Expiration
+
+- Set an absolute expiry timestamp
+- Or set a relative duration (e.g. 7 days)
+- Expired scripts return a clear error message and can be re-enabled by the owner
+
+## Access logs
+
+Each hosted script records:
+
+- Request timestamps
+- Result (allowed / denied / expired)
+- Reason (password fail, IP block, expired)
+
+<Note>
+  Forge does not log script payloads or executor user data — only delivery metadata for the script owner.
+</Note>

@@ -1,0 +1,70 @@
+---
+title: "Presets"
+description: "Pre-configured protection profiles for common use cases"
+sidebarTitle: "Presets"
+icon: "sliders"
+---
+
+Presets bundle protection options into one click. You can also build custom presets and save them to your account.
+
+## Built-in presets
+
+<CardGroup cols={2}>
+  <Card title="Fast" icon="zap">
+    Minimal overhead. Variable renaming \+ light string encryption. Ideal for non-sensitive scripts.
+  </Card>
+
+  <Card title="Balanced" icon="scale">
+    String \+ constant encryption \+ control flow flattening. Recommended default.
+  </Card>
+
+  <Card title="Strong" icon="shield">
+    Adds dead code, junk instructions, and bytecode mutation.
+  </Card>
+
+  <Card title="Maximum" icon="shield-check">
+    Every non-VM protection enabled at highest setting.
+  </Card>
+
+  <Card title="VM Standard" icon="cpu">
+    Full virtualization with a custom Forge VM.
+  </Card>
+
+  <Card title="VM Hardened" icon="lock">
+    VM \+ anti-tamper \+ integrity verification \+ multi-layer encoding.
+  </Card>
+
+  <Card title="VM Extreme" icon="flame">
+    Multi-layer VM with mutated dispatch and randomized handler ordering.
+  </Card>
+
+  <Card title="Custom" icon="sliders">
+    Configure each module individually and save the result.
+  </Card>
+</CardGroup>
+
+## Comparison
+
+| Preset | Strength | Output Size | Runtime Overhead |
+| --- | --- | --- | --- |
+| Fast | Low | ~1.2x | ~5% |
+| Balanced | Medium | ~3x | ~15% |
+| Strong | High | ~6x | ~25% |
+| Maximum | Very High | ~10x | ~40% |
+| VM Standard | High | ~8x | ~50% |
+| VM Hardened | Very High | ~15x | ~70% |
+| VM Extreme | Extreme | ~25x | ~100% |
+
+<Note>
+  Numbers are approximate and vary by source size and feature mix.
+</Note>
+
+## Custom presets
+
+From the Presets page you can:
+
+- Duplicate a built-in preset as a starting point
+- Toggle individual protection modules
+- Adjust [Output Length](/obfuscator/output-length)
+- Save and rename your preset
+- Share presets across your account

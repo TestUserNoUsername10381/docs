@@ -1,0 +1,68 @@
+---
+title: "HTTP API"
+description: "Programmatic access to Forge protection"
+sidebarTitle: "HTTP API"
+icon: "code"
+---
+
+The Forge HTTP API lets you build scripts programmatically. All endpoints require an API key.
+
+## Authentication
+
+Generate an API key from your dashboard. Pass it as a bearer token:
+
+```text
+Authorization: Bearer fk_live_xxxxxxxxxxxx
+```
+
+## POST `/v1/protect`
+
+Protect a Lua/Luau source string.
+
+### Request
+
+```json
+{
+  "source": "print('hello')",
+  "preset": "vm-hardened",
+  "target": "luau",
+  "output_length": "medium",
+  "watermark": false
+}
+```
+
+### Response
+
+```json
+{
+  "build_id": "b_01H...",
+  "output": "return(function()...end)()",
+  "tickets_used": 16,
+  "tickets_remaining": 9984,
+  "warnings": []
+}
+```
+
+## GET `/v1/builds/{build_id}`
+
+Fetch a previous build's metadata.
+
+## GET `/v1/account`
+
+Returns plan, ticket balance, and usage statistics.
+
+## Rate limits
+
+| Plan | Requests / minute |
+| --- | --- |
+| Free | 10 |
+| Starter | 30 |
+| Pro | 120 |
+| Titan | 600 |
+| Lifetime | 1,200 |
+
+Rate-limit headers are returned on every response:
+
+- `X-RateLimit-Limit`
+- `X-RateLimit-Remaining`
+- `X-RateLimit-Reset`

@@ -1,0 +1,49 @@
+---
+title: "Output Length"
+description: "Control how large and complex Forge's output becomes"
+sidebarTitle: "Output Length"
+icon: "ruler"
+---
+
+Output Length is **independent** from Protection Strength. It controls how much padding, junk, and structural complexity Forge adds to the final bundle.
+
+## Presets
+
+| Preset | Bloat | When to use |
+| --- | --- | --- |
+| **Super Low** | None | Smallest possible output. |
+| **Low** | Minimal | Lightweight scripts. |
+| **Medium**_(default)_ | Balanced | Recommended for most users. |
+| **High** | Heavy | Adds extra VM layers and junk code. |
+| **Super High** | Very heavy | Maximum structural complexity. |
+| **Ultra High** | Extreme | Anti-analysis showcase mode. |
+
+A custom percentage slider (0–100%) is also available.
+
+## What increasing length adds
+
+- Additional VM layers
+- Additional fake control-flow structures
+- Additional junk instructions
+- Additional encrypted constants
+- Additional dead branches
+- Larger overall payload
+
+## What decreasing length does
+
+- Cleaner output
+- Reduced bloat
+- Faster runtime startup
+- Smaller file size
+
+## UI feedback
+
+The configuration panel displays:
+
+- Estimated output size (KB)
+- Estimated protection increase
+- Estimated runtime impact (%)
+
+<Tip>
+  Output Length is for resisting analysis tooling — it does not change the cryptographic strength of your protection.
+</Tip>

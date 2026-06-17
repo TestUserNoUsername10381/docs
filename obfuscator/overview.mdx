@@ -1,0 +1,37 @@
+---
+title: "Overview"
+description: "How the Forge obfuscation pipeline works"
+sidebarTitle: "Overview"
+icon: "shield"
+---
+
+Forge transforms readable Lua/Luau into a heavily protected virtualized bundle. Every build is unique.
+
+## Pipeline
+
+## Output structure
+
+```text
+Protected Bundle
+├─ Encrypted Payload
+├─ String Decryptor
+├─ Constant Pool
+├─ Forge VM
+│  ├─ Registers
+│  ├─ Call Stack
+│  ├─ Opcode Table (randomized)
+│  └─ Dispatcher
+└─ Anti-Tamper Checks
+```
+
+## Build diversity
+
+No two Forge builds share the same:
+
+- Opcode numbering
+- Handler ordering
+- Encryption keys
+- Constant indices
+- Dispatch logic
+
+This defeats signature-based pattern matching and makes generic deobfuscators useless against Forge output.

@@ -1,0 +1,33 @@
+---
+title: "Target Platforms"
+description: "Lua and Luau runtimes Forge can target"
+sidebarTitle: "Targets"
+icon: "target"
+---
+
+Forge auto-applies compatibility settings based on the target platform you select.
+
+## Supported targets
+
+| Target | Notes |
+| --- | --- |
+| **Roblox (Luau)** | Default. Optimized for the Luau runtime. |
+| **Roblox Maximum Compatibility** | Conservative output for older client builds. |
+| **Luau CLI** | Standalone Luau interpreter. |
+| **Lua 5.1** | Standard Lua 5.1 (also compatible with LuaJIT 2.x). |
+| **Lua 5.2** | Adds `goto`, bitwise lib. |
+| **Lua 5.3** | Native integers, bitwise operators. |
+| **Lua 5.4** | `<const>`, `<close>`, generational GC. |
+| **LuaJIT** | High-performance JIT runtime. |
+
+## What changes per target
+
+- **Number model** — Lua 5.3\+ uses integer/float distinction; older versions use double only.
+- **Bitwise operations** — Native operators in 5.3\+; `bit32` library in 5.2/Roblox; `bit` in LuaJIT.
+- **String library** — `string.pack` is unavailable on 5.1/5.2.
+- **`goto`** — Required in some flattened control flow output, only available in 5.2\+.
+- **Bytecode format** — Each Lua version has a different bytecode header; Forge generates a target-specific loader.
+
+<Warning>
+  Mismatched targets cause runtime errors. Always pick the runtime your code will actually execute on.
+</Warning>
