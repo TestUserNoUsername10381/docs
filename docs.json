@@ -30,39 +30,39 @@
         "group": "Obfuscator",
         "icon": "shield",
         "pages": [
-          "obfuscator/overview.mdx",
-          "obfuscator/protection-options.mdx",
-          "obfuscator/presets.mdx",
-          "obfuscator/targets.mdx",
-          "obfuscator/output-length.mdx",
-          "obfuscator/vm-architecture.mdx",
-          "obfuscator/watermark.mdx"
+          "obfuscator/overview",
+          "obfuscator/protection-options",
+          "obfuscator/presets",
+          "obfuscator/targets",
+          "obfuscator/output-length",
+          "obfuscator/vm-architecture",
+          "obfuscator/watermark"
         ]
       },
       {
         "group": "Hosting",
         "icon": "server",
         "pages": [
-          "hosting/overview.mdx",
-          "hosting/access-control.mdx"
+          "hosting/overview",
+          "hosting/access-control"
         ]
       },
       {
         "group": "Account",
         "icon": "user",
         "pages": [
-          "account/plans.mdx",
-          "account/tickets.mdx",
-          "pricing.mdx"
+          "account/plans",
+          "account/tickets",
+          "pricing"
         ]
       },
       {
         "group": "Reference",
         "icon": "book",
         "pages": [
-          "reference/cli.mdx",
-          "reference/api.mdx",
-          "faq.mdx"
+          "reference/cli",
+          "reference/api",
+          "faq"
         ]
       }
     ]
