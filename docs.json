@@ -9,60 +9,107 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "pages": [
+    "languages": [
       {
-        "group": "Getting Started",
+        "language": "en",
         "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "groups": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Obfuscator",
+            "icon": "shield",
+            "pages": [
+              "obfuscator/overview",
+              "obfuscator/protection-options",
+              "obfuscator/presets",
+              "obfuscator/targets",
+              "obfuscator/output-length",
+              "obfuscator/vm-architecture",
+              "obfuscator/watermark"
+            ]
+          },
+          {
+            "group": "Hosting",
+            "icon": "server",
+            "pages": [
+              "hosting/overview",
+              "hosting/access-control"
+            ]
+          },
+          {
+            "group": "Account",
+            "icon": "user",
+            "pages": [
+              "account/plans",
+              "account/tickets",
+              "pricing"
+            ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book",
+            "pages": [
+              "reference/cli",
+              "reference/api",
+              "faq"
+            ]
+          }
         ]
       },
       {
-        "group": "Obfuscator",
-        "icon": "shield",
+        "language": "es",
         "pages": [
-          "obfuscator/overview.mdx",
-          "obfuscator/protection-options.mdx",
-          "obfuscator/presets.mdx",
-          "obfuscator/targets.mdx",
-          "obfuscator/output-length.mdx",
-          "obfuscator/vm-architecture.mdx",
-          "obfuscator/watermark.mdx"
-        ]
-      },
-      {
-        "group": "Hosting",
-        "icon": "server",
-        "pages": [
-          "hosting/overview.mdx",
-          "hosting/access-control.mdx"
-        ]
-      },
-      {
-        "group": "Account",
-        "icon": "user",
-        "pages": [
-          "account/plans.mdx",
-          "account/tickets.mdx",
-          "pricing.mdx"
-        ]
-      },
-      {
-        "group": "Reference",
-        "icon": "book",
-        "pages": [
-          "reference/cli.mdx",
-          "reference/api.mdx",
-          "faq.mdx"
+          {
+            "group": "Primeros pasos",
+            "pages": [
+              "es/index",
+              "es/quickstart"
+            ]
+          },
+          {
+            "group": "Ofuscador",
+            "icon": "shield",
+            "pages": [
+              "es/obfuscator/overview",
+              "es/obfuscator/protection-options",
+              "es/obfuscator/presets",
+              "es/obfuscator/targets",
+              "es/obfuscator/output-length",
+              "es/obfuscator/vm-architecture",
+              "es/obfuscator/watermark"
+            ]
+          },
+          {
+            "group": "Hosting",
+            "icon": "server",
+            "pages": [
+              "es/hosting/overview",
+              "es/hosting/access-control"
+            ]
+          },
+          {
+            "group": "Cuenta",
+            "icon": "user",
+            "pages": [
+              "es/account/plans",
+              "es/account/tickets",
+              "es/pricing"
+            ]
+          },
+          {
+            "group": "Referencia",
+            "icon": "book",
+            "pages": [
+              "es/reference/cli",
+              "es/reference/api",
+              "es/faq"
+            ]
+          }
         ]
       }
     ]

@@ -1,0 +1,70 @@
+---
+title: "Preajustes"
+description: "Perfiles de protección preconfigurados para casos de uso comunes"
+sidebarTitle: "Preajustes"
+icon: "sliders"
+---
+
+Los preajustes agrupan opciones de protección en un solo clic. También puedes crear preajustes personalizados y guardarlos en tu cuenta.
+
+## Preajustes integrados
+
+<CardGroup cols={2}>
+  <Card title="Fast" icon="zap">
+    Sobrecarga mínima. Renombrado de variables \+ cifrado ligero de cadenas. Ideal para scripts no sensibles.
+  </Card>
+
+  <Card title="Balanced" icon="scale">
+    Cifrado de cadenas \+ constantes \+ aplanamiento del flujo de control. Predeterminado recomendado.
+  </Card>
+
+  <Card title="Strong" icon="shield">
+    Añade código muerto, instrucciones basura y mutación de bytecode.
+  </Card>
+
+  <Card title="Maximum" icon="shield-check">
+    Todas las protecciones que no son de VM activadas en su nivel más alto.
+  </Card>
+
+  <Card title="VM Standard" icon="cpu">
+    Virtualización completa con una VM Forge personalizada.
+  </Card>
+
+  <Card title="VM Hardened" icon="lock">
+    VM \+ anti-manipulación \+ verificación de integridad \+ codificación multicapa.
+  </Card>
+
+  <Card title="VM Extreme" icon="flame">
+    VM multicapa con despacho mutado y orden aleatorizado de manejadores.
+  </Card>
+
+  <Card title="Custom" icon="sliders">
+    Configura cada módulo de forma individual y guarda el resultado.
+  </Card>
+</CardGroup>
+
+## Comparación
+
+| Preajuste | Fortaleza | Tamaño de salida | Sobrecarga en ejecución |
+| --- | --- | --- | --- |
+| Fast | Baja | ~1.2x | ~5% |
+| Balanced | Media | ~3x | ~15% |
+| Strong | Alta | ~6x | ~25% |
+| Maximum | Muy alta | ~10x | ~40% |
+| VM Standard | Alta | ~8x | ~50% |
+| VM Hardened | Muy alta | ~15x | ~70% |
+| VM Extreme | Extrema | ~25x | ~100% |
+
+<Note>
+  Los números son aproximados y varían según el tamaño del código fuente y la combinación de funciones.
+</Note>
+
+## Preajustes personalizados
+
+Desde la página de Preajustes puedes:
+
+- Duplicar un preajuste integrado como punto de partida
+- Activar o desactivar módulos de protección individuales
+- Ajustar la [Longitud de salida](/es/obfuscator/output-length)
+- Guardar y renombrar tu preajuste
+- Compartir preajustes en tu cuenta

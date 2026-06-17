@@ -1,0 +1,32 @@
+---
+title: "Scripts alojados"
+description: "Aloja tus scripts de Lua protegidos en Forge y cárgalos mediante una única URL"
+sidebarTitle: "Descripción general"
+icon: "server"
+---
+
+Forge puede alojar tus scripts protegidos y servirlos a través de una URL única. Esto reemplaza la necesidad de incrustar payloads completos dentro de un `loadstring`.
+
+## Flujo de trabajo
+
+<Steps>
+</Steps>
+
+## Ejemplo
+
+```lua
+loadstring(game:HttpGet("https://forge.example/s/abcd1234"))()
+```
+
+## Gestión de scripts
+
+Cada script alojado admite:
+
+- Renombrar
+- Editar y volver a proteger
+- Eliminar
+- Regenerar la URL
+- Ver estadísticas de acceso
+- Ver el historial de accesos
+
+Consulta [Control de acceso](/es/hosting/access-control) para conocer las opciones de contraseña y lista de IPs permitidas.

@@ -1,0 +1,54 @@
+---
+title: "Control de acceso"
+description: "Protección con contraseña, listas de IPs permitidas y expiración para scripts alojados"
+sidebarTitle: "Control de acceso"
+icon: "lock"
+---
+
+Forge ofrece controles de acceso granulares para cada script alojado.
+
+## Modos de visibilidad
+
+<CardGroup cols={3}>
+  <Card title="Público" icon="globe">
+    Cualquier persona con la URL puede cargar el script.
+  </Card>
+
+  <Card title="Contraseña" icon="key">
+    Requiere una contraseña antes de entregar el payload.
+  </Card>
+
+  <Card title="Privado" icon="lock">
+    Solo el propietario del script puede cargarlo (uso desde el panel con sesión iniciada).
+  </Card>
+</CardGroup>
+
+## Protección con contraseña
+
+- Establece una contraseña desde la configuración del script
+- Las solicitudes no autorizadas reciben una respuesta de Acceso Denegado
+- Las contraseñas se pueden rotar en cualquier momento sin cambiar la URL
+
+## Restricción por IP
+
+- Añade IPs o rangos CIDR permitidos al script
+- Las solicitudes desde IPs no autorizadas son rechazadas
+- Gestiona las IPs permitidas desde el panel del script
+
+## Expiración
+
+- Establece una marca de tiempo de expiración absoluta
+- O define una duración relativa (por ejemplo, 7 días)
+- Los scripts expirados devuelven un mensaje de error claro y pueden ser reactivados por el propietario
+
+## Registros de acceso
+
+Cada script alojado registra:
+
+- Marcas de tiempo de las solicitudes
+- Resultado (permitido / denegado / expirado)
+- Motivo (contraseña fallida, IP bloqueada, expirado)
+
+<Note>
+  Forge no registra los payloads de los scripts ni los datos de usuario del ejecutor — solo los metadatos de entrega para el propietario del script.
+</Note>

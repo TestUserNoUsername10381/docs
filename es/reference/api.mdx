@@ -1,0 +1,68 @@
+---
+title: "API HTTP"
+description: "Acceso programático a la protección de Forge"
+sidebarTitle: "API HTTP"
+icon: "code"
+---
+
+La API HTTP de Forge te permite generar scripts de forma programática. Todos los endpoints requieren una clave de API.
+
+## Autenticación
+
+Genera una clave de API desde tu dashboard. Pásala como un bearer token:
+
+```text
+Authorization: Bearer fk_live_xxxxxxxxxxxx
+```
+
+## POST `/v1/protect`
+
+Protege una cadena de código fuente Lua/Luau.
+
+### Solicitud
+
+```json
+{
+  "source": "print('hello')",
+  "preset": "vm-hardened",
+  "target": "luau",
+  "output_length": "medium",
+  "watermark": false
+}
+```
+
+### Respuesta
+
+```json
+{
+  "build_id": "b_01H...",
+  "output": "return(function()...end)()",
+  "tickets_used": 16,
+  "tickets_remaining": 9984,
+  "warnings": []
+}
+```
+
+## GET `/v1/builds/{build_id}`
+
+Obtiene los metadatos de una compilación anterior.
+
+## GET `/v1/account`
+
+Devuelve el plan, el saldo de tickets y las estadísticas de uso.
+
+## Límites de velocidad
+
+| Plan | Solicitudes / minuto |
+| --- | --- |
+| Free | 10 |
+| Starter | 30 |
+| Pro | 120 |
+| Titan | 600 |
+| Lifetime | 1,200 |
+
+Las cabeceras de límite de velocidad se devuelven en cada respuesta:
+
+- `X-RateLimit-Limit`
+- `X-RateLimit-Remaining`
+- `X-RateLimit-Reset`

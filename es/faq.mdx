@@ -1,0 +1,49 @@
+---
+title: "Preguntas frecuentes"
+description: "Preguntas frecuentes sobre Forge"
+sidebarTitle: "FAQ"
+icon: "circle-help"
+---
+
+## ¿Forge es indescifrable?
+
+Ningún ofuscador es indescifrable. Forge está diseñado para hacer que la descompilación casual, la coincidencia de firmas y la desofuscación basada en patrones resulten poco prácticas, no imposibles. Con suficiente tiempo y habilidad, cualquier virtualización puede revertirse; Forge eleva el coste de forma drástica.
+
+## ¿Qué lenguajes admite Forge?
+
+Solo Lua y Luau. Lua 5.1–5.4, LuaJIT y Luau (Roblox).
+
+## ¿Mi script seguirá funcionando con normalidad?
+
+Sí. Forge preserva la semántica en tiempo de ejecución. Espera una sobrecarga en tiempo de ejecución proporcional al nivel de protección que elijas.
+
+## ¿Cuánta sobrecarga añade la VM?
+
+Aproximadamente entre un 15 % y un 100 % más lento según el preset (Balanced → VM Extreme). Los bucles internos ajustados son los más afectados.
+
+## ¿Puedo desofuscar la salida de Forge?
+
+Forge no ofrece herramientas de desofuscación para ningún ofuscador, ni siquiera para sí mismo. Forge es una herramienta de protección unidireccional.
+
+## ¿Forge recopila o transmite datos de los usuarios desde mi script?
+
+No. Forge no inyecta telemetría, trackers ni analítica en los scripts protegidos. El comportamiento de tu script se conserva de forma exacta.
+
+## ¿Puedo usar Forge en CI?
+
+Sí: usa la [CLI](/es/reference/cli) o la [API HTTP](/es/reference/api) con una clave de API.
+
+## ¿Cuál es la diferencia entre los presets y Output Length?
+
+- **Presets** controla qué módulos de protección se ejecutan.
+- **Output Length** controla cuánto relleno, código basura y complejidad estructural se añade.
+
+Son independientes.
+
+## ¿Cómo funcionan los tickets?
+
+Cada compilación consume tickets en función de la fuerza de la protección. Consulta [Tickets](/es/account/tickets).
+
+## ¿Qué ocurre si me quedo sin tickets a mitad de mes?
+
+Las nuevas compilaciones quedan bloqueadas hasta tu próximo reinicio. Los scripts protegidos existentes siguen funcionando con normalidad.

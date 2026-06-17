@@ -1,0 +1,29 @@
+---
+title: "Marca de agua"
+description: "Cómo Forge marca la salida del plan gratuito y cómo los planes de pago la desactivan"
+sidebarTitle: "Marca de agua"
+icon: "badge"
+---
+
+Forge añade un comentario de marca de agua a toda la salida protegida del plan gratuito.
+
+## Marca de agua del plan gratuito
+
+```text
+-- son this was obfs by Forge Obfuscator dang tuff | https://forge.example/
+```
+
+## Comportamiento
+
+- Se añade automáticamente en el plan **Free**
+- Desactivada en los planes **Starter**, **Pro**, **Titan** y **Lifetime**
+- El estado de la marca de agua se muestra en el resumen de compilación antes de hacer clic en Protect
+- No se admite eliminar la marca de agua de la salida del plan gratuito
+
+## Por qué existe
+
+La marca de agua permite a los usuarios gratuitos mostrar Forge mientras señala que la compilación se hizo con el plan gratuito. **No** altera el comportamiento de tu script ni debilita la protección.
+
+<Note>
+  El texto y el enlace de la marca de agua son configurables en los planes empresariales.
+</Note>

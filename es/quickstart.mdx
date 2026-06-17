@@ -1,0 +1,53 @@
+---
+title: "Inicio rápido"
+description: "Comienza con una guía sobre el camino más rápido hacia un resultado exitoso"
+sidebarTitle: "Inicio rápido"
+icon: "rocket"
+---
+
+## Requisitos previos
+
+- Una cuenta de Forge
+- Un archivo `.lua` o `.luau` que quieras proteger
+
+## Protege tu primer script
+
+<Steps>
+  <Step title="Inicia sesión">
+    Inicia sesión en Forge con Google o con correo electrónico \+ contraseña.
+  </Step>
+  <Step title="Abre el Ofuscador">
+    Desde la navegación superior, selecciona **Obfuscator**.
+  </Step>
+  <Step title="Pega tu código">
+    Pega tu código fuente Lua en el editor de entrada. Forge admite Lua 5.1–5.4, LuaJIT y Luau.
+  </Step>
+  <Step title="Elige un preajuste">
+    Selecciona un preajuste como **Balanced**, **Strong** o **VM Hardened**, o configura las opciones de protección de forma individual.
+  </Step>
+  <Step title="Compila">
+    Haz clic en **Protect**. Forge ejecuta el pipeline y devuelve tu salida virtualizada.
+  </Step>
+</Steps>
+
+## Ejemplo
+
+Entrada:
+
+```lua
+local function greet(name)
+  print("Hello, " .. name)
+end
+
+greet("world")
+```
+
+Salida (truncada):
+
+```lua
+return(function()local F=ForgeVM;F:Load("...encrypted payload...");F:Run()end)()
+```
+
+<Tip>
+  ¿Necesitas ayuda? Consulta las [Preguntas frecuentes](/es/faq) o las [Opciones de protección](/es/obfuscator/protection-options).
+</Tip>

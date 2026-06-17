@@ -1,0 +1,82 @@
+---
+title: "Arquitectura de la VM"
+description: "Cómo se construye y aleatoriza por compilación la máquina virtual personalizada de Forge"
+sidebarTitle: "Arquitectura de la VM"
+icon: "cpu"
+---
+
+La VM de Forge es el núcleo de la protección virtualizada. Forge genera un intérprete nuevo para cada compilación, con opcodes, despacho y orden de manejadores aleatorizados.
+
+## Diseño en tiempo de ejecución
+
+```text
+ForgeVM
+├─ Registers
+├─ Constant Pool
+├─ Call Stack
+├─ Closure Store
+├─ Prototype Store
+├─ Opcode Metadata
+├─ Dispatcher
+└─ Runtime Context
+```
+
+## Formato del prototipo
+
+```text
+Prototype
+├─ Instruction Stream
+├─ Constants
+├─ Upvalues
+├─ Nested Prototypes
+└─ Metadata
+```
+
+## Descriptor de instrucción
+
+```text
+Instruction
+├─ Opcode
+├─ Operand A
+├─ Operand B
+├─ Operand C
+└─ Flags
+```
+
+## Pipeline de ejecución
+
+## Categorías de opcodes
+
+- Movimiento de datos
+- Carga de constantes
+- Aritmética
+- Comparaciones
+- Saltos
+- Llamadas
+- Retornos
+- Creación de cierres (closures)
+- Operaciones de tabla
+- Operaciones de upvalue
+
+## Mutación de instrucciones
+
+Cada opcode tiene múltiples implementaciones de manejador semánticamente equivalentes. El compilador elige una al azar por compilación, de modo que:
+
+- Dos compilaciones del mismo código fuente producen VMs diferentes
+- La coincidencia de firmas estáticas contra el despachador falla
+- Las huellas de los manejadores no pueden reutilizarse entre compilaciones
+
+## Capas de seguridad
+
+| Capa | Función |
+| --- | --- |
+| 1 | Renombrado de variables |
+| 2 | Cifrado de cadenas |
+| 3 | Virtualización de constantes |
+| 4 | Aplanamiento del flujo de control |
+| 5 | Mutación de instrucciones |
+| 6 | Compilación de la VM |
+| 7 | Compresión del payload |
+| 8 | Cifrado del payload |
+| 9 | Validación en tiempo de ejecución |
+| 10 | Diversidad entre compilaciones |

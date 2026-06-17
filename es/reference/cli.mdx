@@ -1,0 +1,49 @@
+---
+title: "CLI"
+description: "Interfaz de línea de comandos para Forge"
+sidebarTitle: "CLI"
+icon: "terminal"
+---
+
+La CLI de Forge te permite proteger scripts desde tu terminal o tu pipeline de CI.
+
+## Instalación
+
+```bash
+npm install -g @forge/cli
+```
+
+## Autenticación
+
+```bash
+forge login
+```
+
+Abre tu navegador para iniciar sesión y guarda un token en `~/.forge/credentials`.
+
+## Proteger un archivo
+
+```bash
+forge protect input.lua --preset balanced --target luau --out protected.lua
+```
+
+## Flags comunes
+
+| Flag | Descripción |
+| --- | --- |
+| `--preset <name>` | `fast`, `balanced`, `strong`, `maximum`, `vm-standard`, `vm-hardened`, `vm-extreme` |
+| `--target <runtime>` | `luau`, `lua51`, `lua52`, `lua53`, `lua54`, `luajit` |
+| `--output-length <level>` | `low`, `medium`, `high`, `super-high`, `ultra-high` |
+| `--out <path>` | Ruta del archivo de salida |
+| `--watermark <bool>` | Sobrescribe la marca de agua (solo planes de pago) |
+| `--config <path>` | Carga un preset guardado desde disco |
+
+## Códigos de salida
+
+| Código | Significado |
+| --- | --- |
+| 0 | Éxito |
+| 1 | La compilación falló |
+| 2 | Se requiere autenticación |
+| 3 | Tickets insuficientes |
+| 4 | Entrada no válida |

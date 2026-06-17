@@ -1,0 +1,37 @@
+---
+title: "Visión general"
+description: "Cómo funciona el pipeline de ofuscación de Forge"
+sidebarTitle: "Visión general"
+icon: "shield"
+---
+
+Forge transforma código Lua/Luau legible en un paquete virtualizado fuertemente protegido. Cada compilación es única.
+
+## Pipeline
+
+## Estructura de la salida
+
+```text
+Protected Bundle
+├─ Encrypted Payload
+├─ String Decryptor
+├─ Constant Pool
+├─ Forge VM
+│  ├─ Registers
+│  ├─ Call Stack
+│  ├─ Opcode Table (randomized)
+│  └─ Dispatcher
+└─ Anti-Tamper Checks
+```
+
+## Diversidad entre compilaciones
+
+No hay dos compilaciones de Forge que compartan los mismos:
+
+- Numeración de opcodes
+- Orden de los manejadores
+- Claves de cifrado
+- Índices de constantes
+- Lógica de despacho
+
+Esto derrota la coincidencia de patrones basada en firmas y hace inútiles los desofuscadores genéricos contra la salida de Forge.

@@ -1,0 +1,33 @@
+---
+title: "Plataformas objetivo"
+description: "Runtimes de Lua y Luau a los que Forge puede dirigirse"
+sidebarTitle: "Targets"
+icon: "target"
+---
+
+Forge aplica automáticamente los ajustes de compatibilidad según la plataforma objetivo que selecciones.
+
+## Plataformas compatibles
+
+| Objetivo | Notas |
+| --- | --- |
+| **Roblox (Luau)** | Predeterminado. Optimizado para el runtime de Luau. |
+| **Roblox Maximum Compatibility** | Salida conservadora para clientes de Roblox más antiguos. |
+| **Luau CLI** | Intérprete autónomo de Luau. |
+| **Lua 5.1** | Lua 5.1 estándar (también compatible con LuaJIT 2.x). |
+| **Lua 5.2** | Añade `goto` y la biblioteca bitwise. |
+| **Lua 5.3** | Enteros nativos, operadores bitwise. |
+| **Lua 5.4** | `<const>`, `<close>`, GC generacional. |
+| **LuaJIT** | Runtime JIT de alto rendimiento. |
+
+## Qué cambia según el objetivo
+
+- **Modelo numérico** — Lua 5.3\+ distingue entre enteros y flotantes; las versiones más antiguas usan solo double.
+- **Operaciones bitwise** — Operadores nativos en 5.3\+; biblioteca `bit32` en 5.2/Roblox; `bit` en LuaJIT.
+- **Biblioteca de cadenas** — `string.pack` no está disponible en 5.1/5.2.
+- **`goto`** — Requerido en algunas salidas con flujo de control aplanado, solo disponible en 5.2\+.
+- **Formato de bytecode** — Cada versión de Lua tiene una cabecera de bytecode diferente; Forge genera un cargador específico para el objetivo.
+
+<Warning>
+  Los objetivos no coincidentes provocan errores en tiempo de ejecución. Elige siempre el runtime en el que tu código se vaya a ejecutar realmente.
+</Warning>

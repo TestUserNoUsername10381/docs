@@ -1,0 +1,92 @@
+---
+title: "Opciones de protección"
+description: "Cada módulo de protección que incluye Forge, con interruptores y recomendaciones"
+sidebarTitle: "Opciones de protección"
+icon: "shield-check"
+---
+
+Cada función de protección puede activarse de forma independiente o aplicarse a través de un [preajuste](/es/obfuscator/presets).
+
+## Protecciones principales
+
+<CardGroup cols={2}>
+  <Card title="Cifrado de cadenas" icon="lock">
+    Elimina las cadenas en texto plano; se descifran de forma diferida en tiempo de ejecución con resultados en caché.
+  </Card>
+
+  <Card title="Cifrado de constantes" icon="hash">
+    Oculta números, booleanos, enumeraciones y claves de tabla detrás de un grupo virtualizado.
+  </Card>
+
+  <Card title="Ofuscación del flujo de control" icon="git-branch">
+    Aplana las ramas estructuradas en una máquina de estados aleatorizada.
+  </Card>
+
+  <Card title="Envoltura de funciones" icon="box">
+    Envuelve cada cuerpo de función en trampolines protectores.
+  </Card>
+
+  <Card title="Renombrado de variables" icon="pen">
+    Renombra las variables locales con identificadores sin significado.
+  </Card>
+
+  <Card title="Minificación de identificadores" icon="minimize-2">
+    Compacta los identificadores para reducir el tamaño de la salida y la superficie de firma.
+  </Card>
+</CardGroup>
+
+## Anti-análisis
+
+<CardGroup cols={2}>
+  <Card title="Generación de código muerto" icon="skull">
+    Inserta ramas inalcanzables para confundir a los ingenieros inversos.
+  </Card>
+
+  <Card title="Generación de instrucciones basura" icon="trash">
+    Añade patrones no-op a nivel de VM para interrumpir la coincidencia de patrones.
+  </Card>
+
+  <Card title="Anti-manipulación" icon="shield-alert">
+    Verificación de auto-hash, validación de la tabla de opcodes y latidos en tiempo de ejecución.
+  </Card>
+
+  <Card title="Validación de entorno" icon="radar">
+    Comprobaciones en tiempo de ejecución que confirman el entorno de ejecución esperado.
+  </Card>
+
+  <Card title="Verificación de integridad" icon="fingerprint">
+    Detecta la mutación del payload y aborta la ejecución.
+  </Card>
+
+  <Card title="Marca de agua" icon="badge-check">
+    Identificadores de compilación invisibles opcionales para licencias y trazabilidad.
+  </Card>
+</CardGroup>
+
+## Criptografía
+
+<CardGroup cols={2}>
+  <Card title="Generación dinámica de claves" icon="key">
+    Claves por compilación derivadas durante la compilación; nunca se reutilizan.
+  </Card>
+
+  <Card title="Descifrado en tiempo de ejecución" icon="unlock">
+    El descifrado ocurre justo a tiempo; nada persiste en memoria más tiempo del necesario.
+  </Card>
+
+  <Card title="Mutación de bytecode" icon="shuffle">
+    Múltiples formas de bytecode semánticamente equivalentes por instrucción de origen.
+  </Card>
+
+  <Card title="Codificación multicapa" icon="layers">
+    Apila base64 \+ alfabetos personalizados \+ empaquetado de bits para el payload final.
+  </Card>
+</CardGroup>
+
+## Combinaciones recomendadas
+
+| Caso de uso | Opciones recomendadas |
+| --- | --- |
+| Protección ligera | Cifrado de cadenas, renombrado de variables, cifrado de constantes |
+| Anti-skid | Todas las principales \+ flujo de control \+ código muerto |
+| Seguridad máxima | Todas las principales \+ VM \+ anti-manipulación \+ mutación de bytecode |

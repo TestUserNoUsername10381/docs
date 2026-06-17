@@ -1,0 +1,49 @@
+---
+title: "Longitud de salida"
+description: "Controla el tamaño y la complejidad de la salida de Forge"
+sidebarTitle: "Longitud de salida"
+icon: "ruler"
+---
+
+La Longitud de salida es **independiente** de la Fortaleza de protección. Controla cuánto relleno, basura y complejidad estructural añade Forge al paquete final.
+
+## Preajustes
+
+| Preajuste | Inflado | Cuándo usarlo |
+| --- | --- | --- |
+| **Super Low** | Ninguno | Salida lo más pequeña posible. |
+| **Low** | Mínimo | Scripts ligeros. |
+| **Medium**_(predeterminado)_ | Equilibrado | Recomendado para la mayoría de los usuarios. |
+| **High** | Alto | Añade capas adicionales de VM y código basura. |
+| **Super High** | Muy alto | Complejidad estructural máxima. |
+| **Ultra High** | Extremo | Modo de exhibición anti-análisis. |
+
+También está disponible un control deslizante de porcentaje personalizado (0–100%).
+
+## Qué añade aumentar la longitud
+
+- Capas adicionales de VM
+- Estructuras de flujo de control falsas adicionales
+- Instrucciones basura adicionales
+- Constantes cifradas adicionales
+- Ramas muertas adicionales
+- Payload general más grande
+
+## Qué hace disminuir la longitud
+
+- Salida más limpia
+- Menor inflado
+- Inicio en tiempo de ejecución más rápido
+- Tamaño de archivo más pequeño
+
+## Comentarios de la interfaz
+
+El panel de configuración muestra:
+
+- Tamaño de salida estimado (KB)
+- Aumento de protección estimado
+- Impacto estimado en tiempo de ejecución (%)
+
+<Tip>
+  La Longitud de salida sirve para resistir las herramientas de análisis — no cambia la fortaleza criptográfica de tu protección.
+</Tip>
